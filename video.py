@@ -2,12 +2,12 @@ import cv2, time
 from model_utils import ObjectLocalizationNet, remove_initializer_from_input
 
 # Initialize the webcam
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture('p1.mp4')
 
 width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float
 height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float
 fps = cap.get(cv2.CAP_PROP_FPS)
-save_path = "video.mp4"
+save_path = "video.avi"
 vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (int(width), int(height)))
 FPS = 0
 
@@ -31,8 +31,7 @@ while cap.isOpened():
 
 	combined_img = localizer.draw_detections(frame)
 	FPS = (FPS + (1. / (time.time() - t0))) / 2
-	result_frame = cv2.putText(combined_img, "FPS=%.2f" % (FPS), (0, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-	combined_img = cv2.putText(combined_img, "YoloV6", (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 25, 9), 2)
+	#result_frame = cv2.putText(combined_img, "FPS=%.2f" % (FPS), (0, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 	vid_writer.write(combined_img)
 	cv2.imshow("Objects", combined_img)
 
