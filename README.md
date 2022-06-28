@@ -2,7 +2,7 @@
  Python scripts performing class agnostic object localization using the Object Localization Network model in ONNX.
 
 
-![!Object-Localization-Network video](https:/ONNX-Object-Localization-Network/blob/main/doc/img/oln_box.gif)
+![!Object-Localization-Network video](https://github.com/Gaurav14cs17/Object-Localization-Network/blob/main/doc/img/video.avi)
   
 # ONNX Weight file 
 * onnx weight : https://www.dropbox.com/s/ztrp5liphjee623/oln_720x1280.onnx?dl=0
