@@ -12,7 +12,7 @@ vid_writer = cv2.VideoWriter(save_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (i
 FPS = 0
 
 # Initialize object localizer
-model_path = "onnx_weight/oln_360x480.onnx"
+model_path = "onnx_weight/oln_720x1280.onnx"
 remove_initializer_from_input(model_path, model_path) # Remove unused nodes
 localizer = ObjectLocalizationNet(model_path, threshold=0.75)
 
